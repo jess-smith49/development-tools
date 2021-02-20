@@ -8,7 +8,7 @@ type User {
     sets: [Sets]
 }
 
-type Set {
+type Sets {
     _id: ID!
     setName: String!
     card: [Card]
@@ -25,20 +25,18 @@ type Auth {
     user: User
 }
 
-type Query: {
+type Query {
     me: User
 }
 
 type Mutation {
     login(username: String!, password: String!): Auth
     addUser(username: String!, email: String!, password: String!): Auth
-    addSet(setName: String!): Set
-    addCard(question: String!, answer: String!): Set
-    removeSet(setId: ID!): Set
-    removeCard(cardId: ID!): Set
+    addSet(setName: String!): Sets
+    addCard(question: String!, answer: String!): Sets
+    removeSet(setId: ID!): Sets
+    removeCard(cardId: ID!): Sets
 }
-
-
 
 `
 
